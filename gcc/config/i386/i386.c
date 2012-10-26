@@ -32216,7 +32216,7 @@ ix86_free_from_memory (enum machine_mode mode)
 static bool
 ix86_lra_p (void)
 {
-  return true;
+  return ix86_no_lra == 0 && true;
 }
 
 /* Return a register priority for hard reg REGNO.  */
