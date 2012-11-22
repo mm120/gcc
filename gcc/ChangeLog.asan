@@ -1,5 +1,10 @@
 2012-11-22  H.J. Lu  <hongjiu.lu@intel.com>
 
+	PR testsuite/55440
+	* Makefile.in (PLUGINCFLAGS): Filter out -fsanitize=address.
+
+2012-11-22  H.J. Lu  <hongjiu.lu@intel.com>
+
 	PR sanitizer/55374
 	* gcc.c (prepend_lang_specific_driver): New function.
 	(process_command): Use it.
