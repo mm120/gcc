@@ -671,7 +671,7 @@ read_file_guts (cpp_reader *pfile, _cpp_file *file)
        the majority of C source files.  */
     size = 8 * 1024;
 
-  buf = XNEWVEC (uchar, size + 1);
+  buf = XNEWVEC (uchar, size + 16);
   total = 0;
   while ((count = read (file->fd, buf + total, size - total)) > 0)
     {
@@ -682,7 +682,7 @@ read_file_guts (cpp_reader *pfile, _cpp_file *file)
 	  if (regular)
 	    break;
 	  size *= 2;
-	  buf = XRESIZEVEC (uchar, buf, size + 1);
+	  buf = XRESIZEVEC (uchar, buf, size + 16);
 	}
     }
 
@@ -699,7 +699,7 @@ read_file_guts (cpp_reader *pfile, _cpp_file *file)
 
   file->buffer = _cpp_convert_input (pfile,
 				     CPP_OPTION (pfile, input_charset),
-				     buf, size, total,
+				     buf, size + 16, total,
 				     &file->buffer_start,
 				     &file->st.st_size);
   file->buffer_valid = true;
