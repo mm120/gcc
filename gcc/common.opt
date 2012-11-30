@@ -2171,6 +2171,12 @@ funwind-tables
 Common Report Var(flag_unwind_tables) Optimization
 Just generate unwind tables for exception handling
 
+fuse-ld=bfd
+Common Var(flag_use_ld_bfd) Negative(fuse-ld=gold) Undocumented
+
+fuse-ld=gold
+Common Var(flag_use_ld_gold) Negative(fuse-ld=bfd) Undocumented
+
 fuse-linker-plugin
 Common Undocumented
 
